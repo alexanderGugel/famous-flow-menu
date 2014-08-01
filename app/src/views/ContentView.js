@@ -17,7 +17,6 @@ define(function(require, exports, module) {
     function FlowMenuContentView() {
         View.apply(this, arguments);
 
-
         var scrollview = new Scrollview();
         var surfaces = [];
 
@@ -45,10 +44,7 @@ define(function(require, exports, module) {
 
         this.content = scrollview;
 
-        this.stateModifier = new StateModifier({
-            origin: [1, 0],
-            align: [0, 0]
-        });
+        this.stateModifier = new StateModifier();
 
         this.add(this.stateModifier).add(this.content);
     }

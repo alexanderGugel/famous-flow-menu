@@ -41,7 +41,10 @@ define(function(require, exports, module) {
             origin: [0, 0],
             size: [75, undefined]
         })).add(this.navView);
-        this.add(this.contentView);
+        this.add(new StateModifier({
+            origin: [1, 0],
+            align: [0, 0]
+        })).add(this.contentView);
         this.add(new StateModifier({
             align: [0, 1],
             origin: [0, 1],
