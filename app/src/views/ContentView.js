@@ -16,13 +16,18 @@ define(function(require, exports, module) {
 
     function FlowMenuContentView() {
         View.apply(this, arguments);
-
         this._focused = true;
 
         this.content = this.options.content;
+        this.content.pipe(this);
+
+        this._eventInput.on('click', function() {
+            // if (!this._focused) {
+            //     this.toggle();
+            // }
+        }.bind(this));
 
         this.stateModifier = new StateModifier();
-
         this.add(this.stateModifier).add(this.content);
     }
 
@@ -54,6 +59,8 @@ define(function(require, exports, module) {
                 temp.pipe(scrollview);
                 surfaces.push(temp);
             }
+
+            scrollview._eventInput.pipe(scrollview._eventOutput);
 
             return scrollview;
         })()
