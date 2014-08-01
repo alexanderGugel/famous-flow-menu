@@ -45,19 +45,19 @@ define(function(require, exports, module) {
         this.on('toggle', function() {
             this.verticalBarModifier.setTransform(Transform.scale(0.5, 1, 1), {
                 curve: Easing.inQuin,
-                duration: 300
+                duration: 100
             });
             this.verticalBarModifier.setTransform(Transform.scale(1, 1, 1), {
                 curve: Easing.outQuin,
-                duration: 300
+                duration: 100
             });
             this.horizontalBarModifier.setTransform(Transform.scale(1, 0.5, 1), {
                 curve: Easing.inQuin,
-                duration: 300
+                duration: 100
             });
             this.horizontalBarModifier.setTransform(Transform.scale(1, 1, 1), {
                 curve: Easing.outQuin,
-                duration: 300
+                duration: 100
             });
             this.centerModifier.setTransform(Transform.rotateZ(this._focused ? Math.PI/4 : 0), {
                 curve: Easing.outElastic,

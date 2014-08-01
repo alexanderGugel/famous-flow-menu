@@ -43,13 +43,6 @@ define(function(require, exports, module) {
 
         this._focused = true;
 
-        // this.content = new Surface({
-        //     properties: {
-        //         background: '#01579b'
-        //         // boxShadow: '-0px 0px 1px 1px rgba(0, 0, 0, 0.1)'
-        //     }
-        // });
-
         this.content = scrollview;
 
         // this.content = scrollview;
@@ -80,7 +73,7 @@ define(function(require, exports, module) {
 
         this.stateModifier.setTransform(Transform.translate(diff, -diff, 0), {
             curve: curve,
-            duration: 1000
+            duration: 300
         });
 
         this._focused = !this._focused;
