@@ -3,10 +3,12 @@
   "description": "E.g. Seed project to get started with Famo.us.",
   "version": "0.1.0",
   "homepage": "https://github.com/alexanderGugel/famous-flow-menu",
-  "authors": [{
-    "name": "",
-    "url": "http://github.com/alexanderGugel/"
-  }],
+  "authors": [
+    {
+      "name": "",
+      "url": "http://github.com/alexanderGugel/"
+    }
+  ],
   "main": "app/index.html",
   "moduleType": [
     "amd"
@@ -27,6 +29,7 @@
     "requirejs": "~2.1.11",
     "almond": "~0.2.9",
     "famous-polyfills": "git+https://github.com/Famous/polyfills.git#0.1.1",
-    "famous": "~0.2.2"
+    "famous": "~0.2.2",
+    "ionicons": "~1.5.2"
   }
 }
