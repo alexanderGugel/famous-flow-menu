@@ -19,12 +19,15 @@ define(function(require, exports, module) {
         this._focused = true;
 
         this.content = this.options.content;
-        this.content.pipe(this);
 
-        this._eventInput.on('click', function() {
-            // if (!this._focused) {
-            //     this.toggle();
-            // }
+        this.content.on('click', function() {
+            if (!this._focused) {
+                this._eventOutput.emit('toggleRequested');
+            }
+        }.bind(this));
+
+        this.on('toggle', function() {
+            this.toggle();
         }.bind(this));
 
         this.stateModifier = new StateModifier();

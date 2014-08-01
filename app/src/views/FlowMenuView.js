@@ -24,8 +24,12 @@ define(function(require, exports, module) {
         this.contentView = new ContentView();
         this.toggleButtonView = new ToggleButtonView();
 
-        this.toggleButtonView.on('toggle', function () {
-            this.contentView.toggle();
+        this.toggleButtonView.pipe(this);
+        this.contentView.pipe(this);
+
+        this._eventInput.on('toggleRequested', function() {
+            this.toggleButtonView._eventOutput.emit('toggle');
+            this.contentView._eventOutput.emit('toggle');
         }.bind(this));
 
         var background = new Surface({

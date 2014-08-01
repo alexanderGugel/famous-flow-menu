@@ -33,12 +33,12 @@ define(function(require, exports, module) {
         });
 
         this.verticalBarSurface.on('click', function() {
-            this._eventOutput.emit('toggle');
+            this._eventOutput.emit('toggleRequested');
         }.bind(this));
 
 
         this.horizontalBarSurface.on('click', function() {
-            this._eventOutput.emit('toggle');
+            this._eventOutput.emit('toggleRequested');
         }.bind(this));
 
 
