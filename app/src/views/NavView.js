@@ -18,10 +18,11 @@ define(function(require, exports, module) {
         this._focused = true;
 
         this.stateModifier = new StateModifier({
-            size: [null, null]
         });
 
-        this.add(this.stateModifier).add(new Surface({
+        this.nav = this.add(this.stateModifier);
+
+        this.nav.add(new Surface({
           content: 'Test',
           properties: {
               zIndex: -10
