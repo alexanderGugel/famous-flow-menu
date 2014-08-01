@@ -25,13 +25,16 @@ define(function(require, exports, module) {
 
         for (var i = 0, temp; i < 40; i++) {
             temp = new Surface({
-                 size: [undefined, 100],
-                 properties: {
-                     backgroundColor: "hsl(" + (i * 360 / 40) + ", 100%, 50%)",
-                     lineHeight: "200px",
-                     textAlign: "center",
-                     zIndex: 9000
-                 }
+                content: 'This is surface #' + i,
+                size: [undefined, 100],
+                properties: {
+                    backgroundColor: 'hsl(' + (i*5) + ', 100%, 50%)',
+                    lineHeight: '100px',
+                    textAlign: 'center',
+                    fontFamily: 'Arial',
+                    color: '#fff',
+                    zIndex: 9000
+                }
             });
 
             temp.pipe(scrollview);
