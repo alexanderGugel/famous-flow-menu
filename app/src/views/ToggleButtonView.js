@@ -17,22 +17,20 @@ define(function(require, exports, module) {
 
         this._focused = true;
 
+        var plusStyles = {
+            background: 'rgba(255, 255, 255, 0.9)',
+            boxShadow: '-2px 2px 0px 0px rgba(0, 0, 0, 0.1)'
+        };
+
         this.verticalBarSurface = new Surface({
             size: [30, 7],
-            properties: {
-                background: 'rgba(255, 255, 255, 0.9)',
-                boxShadow: '-2px 2px 0px 0px rgba(0, 0, 0, 0.1)'
-            }
+            properties: plusStyles
         });
 
         this.horizontalBarSurface = new Surface({
             size: [7, 30],
-            properties: {
-                background: 'rgba(255, 255, 255, 0.9)',
-                boxShadow: '-2px 2px 0px 0px rgba(0, 0, 0, 0.1)'
-            }
+            properties: plusStyles
         });
-
 
         this.verticalBarSurface.on('click', function() {
             this._eventOutput.emit('toggle');
