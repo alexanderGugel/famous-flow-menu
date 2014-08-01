@@ -18,16 +18,18 @@ define(function(require, exports, module) {
         this._focused = true;
 
         this.verticalBarSurface = new Surface({
-            size: [30, 5],
+            size: [30, 7],
             properties: {
-                background: '#eee'
+                background: 'rgba(255, 255, 255, 0.9)',
+                boxShadow: '-2px 2px 0px 0px rgba(0, 0, 0, 0.1)'
             }
         });
 
         this.horizontalBarSurface = new Surface({
-            size: [5, 30],
+            size: [7, 30],
             properties: {
-                background: '#eee'
+                background: 'rgba(255, 255, 255, 0.9)',
+                boxShadow: '-2px 2px 0px 0px rgba(0, 0, 0, 0.1)'
             }
         });
 
@@ -74,7 +76,6 @@ define(function(require, exports, module) {
 
         this.verticalBarModifier = new StateModifier({});
         this.horizontalBarModifier = new StateModifier({});
-
 
         this.plusIcon = this.add(this.centerModifier);
         this.plusIcon.add(this.verticalBarModifier).add(this.verticalBarSurface);

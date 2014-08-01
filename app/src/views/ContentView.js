@@ -17,32 +17,9 @@ define(function(require, exports, module) {
     function FlowMenuContentView() {
         View.apply(this, arguments);
 
-        var scrollview = new Scrollview();
-        var surfaces = [];
-
-        scrollview.sequenceFrom(surfaces);
-
-        for (var i = 0, temp; i < 40; i++) {
-            temp = new Surface({
-                content: 'This is surface #' + i,
-                size: [undefined, 100],
-                properties: {
-                    backgroundColor: 'hsl(' + (i*5) + ', 100%, 50%)',
-                    lineHeight: '100px',
-                    textAlign: 'center',
-                    fontFamily: 'Arial',
-                    color: '#fff',
-                    zIndex: 9000
-                }
-            });
-
-            temp.pipe(scrollview);
-            surfaces.push(temp);
-        }
-
         this._focused = true;
 
-        this.content = scrollview;
+        this.content = this.options.content;
 
         this.stateModifier = new StateModifier();
 
@@ -53,7 +30,33 @@ define(function(require, exports, module) {
     FlowMenuContentView.prototype.constructor = FlowMenuContentView;
 
     FlowMenuContentView.DEFAULT_OPTIONS = {
-        difference: 75
+        difference: 75,
+        content: (function () {
+            var scrollview = new Scrollview();
+            var surfaces = [];
+
+            scrollview.sequenceFrom(surfaces);
+
+            for (var i = 0, temp; i < 40; i++) {
+                temp = new Surface({
+                    content: 'This is surface #' + i,
+                    size: [undefined, 100],
+                    properties: {
+                        backgroundColor: 'hsl(' + (i*5) + ', 100%, 50%)',
+                        lineHeight: '100px',
+                        textAlign: 'center',
+                        fontFamily: 'Arial',
+                        color: '#fff',
+                        zIndex: 1000
+                    }
+                });
+
+                temp.pipe(scrollview);
+                surfaces.push(temp);
+            }
+
+            return scrollview;
+        })()
     };
 
     FlowMenuContentView.prototype.toggle = function() {

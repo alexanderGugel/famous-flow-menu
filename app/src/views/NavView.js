@@ -15,9 +15,16 @@ define(function(require, exports, module) {
     function FlowMenuNavView() {
         View.apply(this, arguments);
 
-        this.add(new Surface({
+        this._focused = true;
+
+        this.stateModifier = new StateModifier({
+            size: [null, null]
+        });
+
+        this.add(this.stateModifier).add(new Surface({
           content: 'Test',
           properties: {
+              zIndex: -10
           }
         }));
     }
