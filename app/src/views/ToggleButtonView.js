@@ -43,7 +43,7 @@ define(function(require, exports, module) {
 
 
         this.on('toggle', function() {
-            this.verticalBarModifier.setTransform(Transform.scale(0.5, 1, 1), {
+            this.verticalBarModifier.setTransform(Transform.scale(0.2, 1, 1), {
                 curve: Easing.inQuin,
                 duration: 100
             });
@@ -51,7 +51,7 @@ define(function(require, exports, module) {
                 curve: Easing.outQuin,
                 duration: 100
             });
-            this.horizontalBarModifier.setTransform(Transform.scale(1, 0.5, 1), {
+            this.horizontalBarModifier.setTransform(Transform.scale(1, 0.2, 1), {
                 curve: Easing.inQuin,
                 duration: 100
             });
