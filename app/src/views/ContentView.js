@@ -25,7 +25,6 @@ define(function(require, exports, module) {
 
         for (var i = 0, temp; i < 40; i++) {
             temp = new Surface({
-                //  content: "Surface: " + (i + 1),
                  size: [undefined, 100],
                  properties: {
                      backgroundColor: "hsl(" + (i * 360 / 40) + ", 100%, 50%)",
@@ -42,8 +41,6 @@ define(function(require, exports, module) {
         this._focused = true;
 
         this.content = scrollview;
-
-        // this.content = scrollview;
 
         this.stateModifier = new StateModifier({
             origin: [1, 0],
