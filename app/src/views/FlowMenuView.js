@@ -24,10 +24,12 @@ define(function(require, exports, module) {
         this.contentView = new ContentView();
         this.toggleButtonView = new ToggleButtonView();
 
-        this.toggleButtonView.pipe(this);
+        this.navView.pipe(this);
         this.contentView.pipe(this);
+        this.toggleButtonView.pipe(this);
 
         this._eventInput.on('toggleRequested', function() {
+            this.navView._eventOutput.emit('toggle');
             this.toggleButtonView._eventOutput.emit('toggle');
             this.contentView._eventOutput.emit('toggle');
         }.bind(this));
