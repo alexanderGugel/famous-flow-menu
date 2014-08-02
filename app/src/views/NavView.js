@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     var SequentialLayout = require('famous/views/SequentialLayout');
 
     /*
-     * @name FlowMenuNavView
+     * @name NavView
      * @constructor
      * @description
      */

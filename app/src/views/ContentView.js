@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     var Scrollview = require('famous/views/Scrollview');
 
     /*
-     * @name FlowMenuContentView
+     * @name ContentView
      * @constructor
      * @description
      */
