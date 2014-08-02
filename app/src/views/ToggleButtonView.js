@@ -37,6 +37,9 @@ define(function(require, exports, module) {
         this.verticalBarSurface.pipe(this._eventInput);
         this.horizontalBarSurface.pipe(this._eventInput);
 
+        this.clickCatchSurface = new Surface();
+        this.clickCatchSurface.pipe(this._eventInput);
+
         this._eventInput.on('click', function() {
             this._eventOutput.emit('toggleRequested');
         }.bind(this));
@@ -70,6 +73,7 @@ define(function(require, exports, module) {
         this.horizontalBarModifier = new StateModifier();
 
         this.plusIcon = this.add(this.centerModifier);
+        this.plusIcon.add(this.clickCatchSurface);
         this.plusIcon.add(this.verticalBarModifier).add(this.verticalBarSurface);
         this.plusIcon.add(this.horizontalBarModifier).add(this.horizontalBarSurface);
     }
